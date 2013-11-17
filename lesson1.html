@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+<title>Lesson 1</title>
+<link rel="stylesheet" type="text/css" href="prejs.css"/>
+<!-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
+<script src="prejs.js" type="text/JavaScript"></script>
+</head>
+<body>
+<div id="presentation">
+</div>
+<script type="text/javascript">
+
+var p = document.getElementById("presentation");
+var pres = new Presentation(p);
+var s = new Slide("slide0");
+s.addNode("h1", "JavaScript: Language Basics", "maintitle", false);
+s.addNode("h2", "A short primer to JavaScript", "subtitle", false);
+pres.slides.push(s);
+s = new Slide("slide1");
+s.addNode("h1", "Language Basics", "slidetitle", false);
+s.addNode("ul", "","mainbullets");
+s.addNode("li", "Syntax Overview - Variables, Conditionals (and quirks)", true);
+s.addNode("li", "Basic Functions", true);
+s.addNode("li", "Objects and Functions", true);
+s.addNode("li", "Procedural vs. Object Oriented in JavaScript", true);
+pres.slides.push(s);
+s = new Slide("slide2");
+s.addNode("h1", "Syntax", "slidetitle", false);
+s.addNode("ul","","mainbullets");
+s.addNode("li","All statements end with ;", true);
+s.addNode("li","var local_variable = 123;",true);
+s.addNode("li","global_variable = 456;",true);
+s.addNode("li","if (conditional) { code; }",true);
+s.addNode("li","function (arguments) { code; }",true);
+pres.slides.push(s);
+s = new Slide("slide7");
+s.addNode("h1","Conditionals and Quirks","slidetitle",false);
+s.addNode("ul","","mainbullets");
+s.addNode("li","== != <= >= ...",true);
+s.addNode("li","Converts types (strings and numbers)",true);
+s.addNode("li","=== !==",true);
+s.addNode("li","Strictly equal",true);
+pres.slides.push(s);
+s = new Slide("slide3");
+s.addNode("h1", "Basic Functions", "slidetitle", false);
+s.addNode("div", "function loadButton() {<br>&nbsp;&nbsp;&nbsp;&nbsp;var button = document.createElement(\"input\");<br>&nbsp;&nbsp;&nbsp;&nbsp;button.id = \"button\";<br>&nbsp;&nbsp;&nbsp;&nbsp;button.type = \"button\";<br>&nbsp;&nbsp;&nbsp;&nbsp;button.value = \"Press Here\";<br>&nbsp;&nbsp;&nbsp;&nbsp;document.body.appendChild(button);<br>}<br>", "code");
+s.addNode("span", "<input id=\"button\" type=\"button\" value=\"Press Here\"/>",false);
+pres.slides.push(s);
+s = new Slide("slide4");
+s.addNode("h1","Objects and Functions", "slidetitle", false);
+s.addNode("ul","","mainbullets");
+s.addNode("li","Functions are \"First Class Citizens\"", false);
+pres.slides.push(s);
+s = new Slide("slide5");
+s.addNode("h1","Objects and Functions","slidetitle",false);
+s.addNode("div","var CreditCard = function (number) {<br>&nbsp;&nbsp;&nbsp;&nbsp;this.cardNumber = number;<br>}","code",false);
+pres.slides.push(s);
+s = new Slide("slide6");
+s.addNode("h1","Procedural vs. Object Oriented","slidetitle",false);
+s.addNode("ul","","mainbullets",false);
+s.addNode("li","No rules for code organization; Pure Syntax",true);
+pres.slides.push(s);
+
+pres.start();
+
+</script>
+</body>
+</HTML>

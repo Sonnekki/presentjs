@@ -1,0 +1,8 @@
+Thanks for looking!
+
+This is a really simple presentation framework written in JavaScript.  It does pretty much does everything that PowerPoint can do in under 200 spacious lines of JavaScript.
+
+JQuery was previously used in this implementation but was removed to be extra-framework free.  If you want pretty animations and classy CSS addition things, just uncomment a few lines of code.
+
+lesson1.html - A quick example of using the presentation framework; supposed to be used with a JavaScript introduction class
+presentjs.js - The code behind the presentation framework
