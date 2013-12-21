@@ -4,15 +4,21 @@
 <title>Lesson 1</title>
 <link rel="stylesheet" type="text/css" href="prejs.css"/>
 <!-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
+<!-- <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script> -->
+
 <script src="prejs.js" type="text/JavaScript"></script>
 </head>
 <body>
-<div id="presentation">
+<div id="presentation"  class="presentation">
+</div>
+<div id="slidedesign" class="slidedesign">
+<input type="button" value="New Slide" class="newslide"/>
 </div>
 <script type="text/javascript">
 
 var p = document.getElementById("presentation");
-var pres = new Presentation(p);
+var e = document.getElementById("slidedesign");
+var pres = new Presentation(p,e);
 var s = new Slide("slide0");
 s.addNode("h1", "JavaScript: Language Basics", "maintitle", false);
 s.addNode("h2", "A short primer to JavaScript", "subtitle", false);
@@ -45,7 +51,7 @@ pres.slides.push(s);
 s = new Slide("slide3");
 s.addNode("h1", "Basic Functions", "slidetitle", false);
 s.addNode("div", "function loadButton() {<br>&nbsp;&nbsp;&nbsp;&nbsp;var button = document.createElement(\"input\");<br>&nbsp;&nbsp;&nbsp;&nbsp;button.id = \"button\";<br>&nbsp;&nbsp;&nbsp;&nbsp;button.type = \"button\";<br>&nbsp;&nbsp;&nbsp;&nbsp;button.value = \"Press Here\";<br>&nbsp;&nbsp;&nbsp;&nbsp;document.body.appendChild(button);<br>}<br>", "code");
-s.addNode("span", "<input id=\"button\" type=\"button\" value=\"Press Here\"/>",false);
+s.addNode("div", "&lt;input id=\"button\" type=\"button\" value=\"Press Here\"/&gt;","code",false);
 pres.slides.push(s);
 s = new Slide("slide4");
 s.addNode("h1","Objects and Functions", "slidetitle", false);
@@ -63,6 +69,11 @@ s.addNode("li","No rules for code organization; Pure Syntax",true);
 pres.slides.push(s);
 
 pres.start();
+
+//$("#draggable").draggable();
+//$("div.slideleftarrow").on("click", function(e) { alert("go left"); });
+//$("div.sliderightarrow").on("click", function(e) { alert("go right"); });
+
 
 </script>
 </body>
